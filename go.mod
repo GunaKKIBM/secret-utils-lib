@@ -1,4 +1,4 @@
-module sdk-test
+module secret-utils-lib
 
 go 1.15
 

@@ -1,12 +1,13 @@
 package authenticator
 
 import (
+	"IBM/secret-utils-lib/pkg/utils"
 	"bufio"
 	"errors"
 	"os"
 	"strings"
 
-	"github.com/GunaKKIBM/secret-utils-lib/pkg/utils"
+	// "github.com/GunaKKIBM/secret-utils-lib/pkg/utils"
 	"go.uber.org/zap"
 )
 
