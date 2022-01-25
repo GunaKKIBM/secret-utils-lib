@@ -20,11 +20,11 @@ type APIKeyAuthenticator struct {
 func NewIamAuthenticator(apikey string, logger *zap.Logger) *APIKeyAuthenticator {
 	logger.Info("Initializing iam authenticator")
 	defer logger.Info("Initialized iam authenticator")
-	ca := new(APIKeyAuthenticator)
-	ca.authenticator = new(core.IamAuthenticator)
-	ca.authenticator.ApiKey = apikey
-	ca.logger = logger
-	return ca
+	aa := new(APIKeyAuthenticator)
+	aa.authenticator = new(core.IamAuthenticator)
+	aa.authenticator.ApiKey = apikey
+	aa.logger = logger
+	return aa
 }
 
 // GetToken ...
@@ -65,4 +65,9 @@ func (aa *APIKeyAuthenticator) GetToken(freshTokenRequired bool) (string, uint64
 	}
 	aa.logger.Info("Successfully fetched IAM token")
 	return tokenResponse.AccessToken, tokenlifetime, nil
+}
+
+// GetSecret ...
+func (aa *APIKeyAuthenticator) GetSecret() string {
+	return aa.authenticator.ApiKey
 }

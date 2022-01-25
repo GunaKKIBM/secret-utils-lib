@@ -66,3 +66,8 @@ func (ca *ComputeIdentityAuthenticator) GetToken(freshTokenRequired bool) (strin
 	ca.logger.Info("Successfully fetched iam token")
 	return tokenResponse.AccessToken, tokenlifetime, nil
 }
+
+// GetSecret ...
+func (ca *ComputeIdentityAuthenticator) GetSecret() string {
+        return ca.authenticator.IAMProfileID
+}
