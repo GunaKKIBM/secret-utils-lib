@@ -71,3 +71,8 @@ func (aa *APIKeyAuthenticator) GetToken(freshTokenRequired bool) (string, uint64
 func (aa *APIKeyAuthenticator) GetSecret() string {
 	return aa.authenticator.ApiKey
 }
+
+// SetSecret ...
+func (aa *APIKeyAuthenticator) SetSecret(secret string) {
+	aa.authenticator.ApiKey = secret
+}

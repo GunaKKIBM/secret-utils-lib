@@ -71,3 +71,8 @@ func (ca *ComputeIdentityAuthenticator) GetToken(freshTokenRequired bool) (strin
 func (ca *ComputeIdentityAuthenticator) GetSecret() string {
         return ca.authenticator.IAMProfileID
 }
+
+// SetSecret ...
+func (aa *ComputeIdentityAuthenticator) SetSecret(secret string) {
+        ca.authenticator.IAMProfileID = secret
+}
